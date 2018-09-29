@@ -12,6 +12,12 @@ public class PlayerController : MonoBehaviour {
     public float walkSpeed = 10;
     public float jumpForce = 2;
 
+    [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
+   
+    private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
+    const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+    private bool m_Grounded;            // Whether or not the player is grounded.
+
     // Use this for initialization
     void Start()
     {
@@ -19,11 +25,24 @@ public class PlayerController : MonoBehaviour {
         spriteRend = GetComponent<SpriteRenderer>();
         collide = GetComponent<Collider2D>();
 
+        m_GroundCheck = transform.Find("GroundCheck");
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        m_Grounded = false;
+
+            // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
+            // This can be done using layers instead but Sample Assets will not overwrite your project settings.
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                if (colliders[i].gameObject != gameObject)
+                    m_Grounded = true;
+            }   
+
         Walk();
         FlipSprite();
         Jump();
@@ -56,10 +75,10 @@ public class PlayerController : MonoBehaviour {
 
     void Jump()
     {
-        if (isGround && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
+        if (m_Grounded && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
         {
-            rigid.velocity = new Vector2(rigid.velocity.x, jumpForce);
-
+            m_Grounded = false;
+            rigid.velocity = new Vector2(rigid.velocity.x, 10);
         }
     }
 
