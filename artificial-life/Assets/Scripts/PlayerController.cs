@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour {
     private SpriteRenderer spriteRend;
     private Rigidbody2D rigid;
     private Collider2D collide;
-    public bool isGround = true;
     public float walkSpeed = 10;
     public float jumpForce = 2;
 
