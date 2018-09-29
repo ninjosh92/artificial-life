@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
     private SpriteRenderer spriteRend;
     private Rigidbody2D rigid;
     private Collider2D collider;
-
+    public bool isGround = true;
     public float walkSpeed = 10;
 
     // Use this for initialization
@@ -25,13 +25,14 @@ public class PlayerController : MonoBehaviour {
     {
         Walk();
         FlipSprite();
+        jump();
     }
 
     void Walk()
     {
         float HMovement = Input.GetAxis("Horizontal") * walkSpeed;
-        float VMovement = Input.GetAxis("Vertical") * walkSpeed;
-        rigid.velocity = new Vector2(HMovement, VMovement);
+        //float VMovement = Input.GetAxis("Vertical") * walkSpeed;
+        rigid.velocity = new Vector2(HMovement, rigid.velocity.y);// VMovement);
     }
 
     void FlipSprite()
@@ -50,5 +51,29 @@ public class PlayerController : MonoBehaviour {
             }
 
         }
+    }
+
+
+
+    void jump()
+    {
+        if (isGround && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
+        {
+            rigid.velocity = new Vector2(rigid.velocity.x, 10);
+
+        }
+    }
+
+  
+
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        isGround = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isGround = false;
     }
 }
