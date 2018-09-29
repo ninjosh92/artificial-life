@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour {
             {
                 spriteRend.flipX = false;
             }
-
         }
     }
 
@@ -82,13 +81,5 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        isGround = true;
-    }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        isGround = false;
-    }
 }
