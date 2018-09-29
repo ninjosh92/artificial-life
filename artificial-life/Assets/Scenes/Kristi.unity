@@ -199,8 +199,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1130168483}
   - component: {fileID: 1130168482}
+  - component: {fileID: 1130168484}
   m_Layer: 0
-  m_Name: placeholder_base
+  m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,8 +239,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 864440117
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 119dd1605b906ef458a421d9ae3cb2ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -265,6 +266,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1130168484
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1130168481}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 1}
+    newSize: {x: 4, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1351938926
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,8 +457,9 @@ GameObject:
   - component: {fileID: 1908800833}
   - component: {fileID: 1908800832}
   - component: {fileID: 1908800831}
+  - component: {fileID: 1908800835}
   m_Layer: 0
-  m_Name: placeholder_zombie
+  m_Name: zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -467,12 +494,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1908800833
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -508,7 +535,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c57d304e7343982499fc7b8813e7f1a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9b909de13e70aa4ab7f05e310a6a6f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -532,3 +559,117 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1908800835
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1908800830}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.63, y: 3.82}
+    newSize: {x: 1.6, y: 2.72}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.2993173, y: -1.6279926}
+      - {x: -0.2999241, y: -1.6321592}
+      - {x: -0.295, y: -1.3199999}
+      - {x: -0.085, y: -1.3199999}
+      - {x: 0.125, y: -1.3}
+      - {x: 0.14346552, y: -1.6204376}
+      - {x: 0.21607934, y: -1.639493}
+      - {x: 0.28892708, y: -1.6494923}
+      - {x: 0.40462714, y: -1.6441135}
+      - {x: 0.43262023, y: -1.6362724}
+      - {x: 0.43877542, y: -1.6313486}
+      - {x: 0.43538564, y: -1.6052103}
+      - {x: 0.43386865, y: -1.6064587}
+      - {x: 0.42499998, y: -1.53}
+      - {x: 0.415, y: -1.38}
+      - {x: 0.45499998, y: -1.25}
+      - {x: 0.685, y: -1.14}
+      - {x: 0.765, y: -1.03}
+      - {x: 0.73499995, y: -0.71}
+      - {x: 0.705, y: -0.32999998}
+      - {x: 0.675, y: -0.089999996}
+      - {x: 0.685, y: 0.089999996}
+      - {x: 0.885, y: -0.08}
+      - {x: 1.165, y: -0.39}
+      - {x: 1.235, y: -0.39999998}
+      - {x: 1.285, y: -0.32999998}
+      - {x: 1.285, y: -0.099999994}
+      - {x: 1.275, y: -0.04}
+      - {x: 1.185, y: 0.049999997}
+      - {x: 0.995, y: 0.17}
+      - {x: 0.66499996, y: 0.39}
+      - {x: 0.755, y: 0.42999998}
+      - {x: 0.91499996, y: 0.52}
+      - {x: 1.045, y: 0.64}
+      - {x: 1.115, y: 0.74}
+      - {x: 1.1949999, y: 0.96}
+      - {x: 1.2049999, y: 1.13}
+      - {x: 1.165, y: 1.3299999}
+      - {x: 1.0749999, y: 1.54}
+      - {x: 0.935, y: 1.6899999}
+      - {x: 0.585, y: 1.87}
+      - {x: 0.415, y: 1.9}
+      - {x: 0.36499998, y: 1.91}
+      - {x: 0.055, y: 1.91}
+      - {x: -0.085, y: 1.87}
+      - {x: -0.285, y: 1.7199999}
+      - {x: -0.525, y: 1.7099999}
+      - {x: -0.685, y: 1.66}
+      - {x: -0.805, y: 1.54}
+      - {x: -0.995, y: 1.3}
+      - {x: -1.0649999, y: 1.16}
+      - {x: -1.0749999, y: 0.85999995}
+      - {x: -0.995, y: 0.69}
+      - {x: -0.85499996, y: 0.53999996}
+      - {x: -0.905, y: 0.41}
+      - {x: -1.055, y: 0.42}
+      - {x: -1.125, y: 0.58}
+      - {x: -0.92499995, y: 0.56}
+      - {x: -0.905, y: 0.59}
+      - {x: -0.965, y: 0.65}
+      - {x: -1.145, y: 0.66999996}
+      - {x: -1.255, y: 0.59}
+      - {x: -1.2149999, y: 0.45999998}
+      - {x: -1.145, y: 0.38}
+      - {x: -1.015, y: 0.32999998}
+      - {x: -0.92499995, y: 0.28}
+      - {x: -1.025, y: 0.22999999}
+      - {x: -1.235, y: 0.19999999}
+      - {x: -1.285, y: 0.17}
+      - {x: -1.285, y: 0.12}
+      - {x: -1.2149999, y: 0.099999994}
+      - {x: -1.055, y: 0.11}
+      - {x: -0.945, y: 0.089999996}
+      - {x: -0.955, y: -0.17999999}
+      - {x: -0.955, y: -0.78999996}
+      - {x: -0.98499995, y: -1.09}
+      - {x: -0.92499995, y: -1.15}
+      - {x: -0.655, y: -1.29}
+      - {x: -0.60499996, y: -1.28}
+      - {x: -0.60499996, y: -1.54}
+      - {x: -0.58090997, y: -1.7054596}
+      - {x: -0.5549864, y: -1.7110691}
+      - {x: -0.5270287, y: -1.7085905}
+      - {x: -0.48129246, y: -1.7152004}
+      - {x: -0.43631062, y: -1.713665}
+      - {x: -0.37653857, y: -1.7161598}
+      - {x: -0.3415249, y: -1.7111015}
+      - {x: -0.3045938, y: -1.7098703}
+      - {x: -0.30090076, y: -1.6754007}
+      - {x: -0.29843858, y: -1.6507797}
