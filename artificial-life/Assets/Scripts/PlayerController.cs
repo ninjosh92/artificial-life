@@ -7,16 +7,17 @@ public class PlayerController : MonoBehaviour {
     public GameObject playerObject;
     private SpriteRenderer spriteRend;
     private Rigidbody2D rigid;
-    private Collider2D collider;
+    private Collider2D collide;
     public bool isGround = true;
     public float walkSpeed = 10;
+    public float jumpForce = 2;
 
     // Use this for initialization
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRend = GetComponent<SpriteRenderer>();
-        collider = GetComponent<Collider2D>();
+        collide = GetComponent<Collider2D>();
 
     }
 
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour {
     {
         Walk();
         FlipSprite();
-        jump();
+        Jump();
     }
 
     void Walk()
@@ -53,9 +54,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-
-
-    void jump()
+    void Jump()
     {
         if (isGround && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
         {
@@ -63,9 +62,6 @@ public class PlayerController : MonoBehaviour {
 
         }
     }
-
-  
-
 
     private void OnCollisionStay2D(Collision2D collision)
     {
