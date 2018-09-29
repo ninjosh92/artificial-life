@@ -555,6 +555,9 @@ MonoBehaviour:
   isGround: 1
   walkSpeed: 10
   jumpForce: 14
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &443797450
 MonoBehaviour:
   m_ObjectHideFlags: 0
