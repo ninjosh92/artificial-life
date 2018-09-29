@@ -4,8 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< Updated upstream
   - Undefined
   - Collectable
+=======
+  - Collectable
+  - GroundCheck
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
