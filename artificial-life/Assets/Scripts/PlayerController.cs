@@ -85,5 +85,20 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Flashlight"))
+        {
+            respawn();
+        }
+    }
 
+    private void respawn()
+    {
+        Vector3 temp = transform.position; // copy to an auxiliary variable...
+        temp.x = 10.1f; // modify the component you want in the variable...
+        temp.y = 31.1f;
+        transform.position = temp; // and save the modified value
+                                   // transform.position = startingPosition; // and save the modified value
+    }
 }

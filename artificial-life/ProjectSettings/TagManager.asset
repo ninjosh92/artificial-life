@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collectable
   - Guard
+  - Flashlight
   layers:
   - Default
   - TransparentFX
