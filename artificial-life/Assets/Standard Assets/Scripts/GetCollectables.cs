@@ -2,19 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetCollectables : MonoBehaviour {
+public class GetCollectables : MonoBehaviour
+{
 
     public int totalToken = 0;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public AudioClip[] sounds;
+    public AudioSource audioSrc;
+
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     { //
@@ -23,7 +29,13 @@ public class GetCollectables : MonoBehaviour {
         {
             Destroy(collision.gameObject);
             totalToken++;
+            playsound(0);
         }
-        
+    }
+
+    private void playsound(int index)
+    {
+        audioSrc.clip = sounds[index];
+        audioSrc.Play();
     }
 }

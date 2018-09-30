@@ -9,6 +9,9 @@ public class EnemyController : MonoBehaviour {
     private SpriteRenderer sprite;
     private float startingX;
 
+    public AudioClip[] sounds;
+    public AudioSource audioSrc;
+
     // Use this for initialization
     void Start()
     {
@@ -47,6 +50,13 @@ public class EnemyController : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(this.gameObject);
+            playsound(0);
         }
+    }
+
+    private void playsound(int index)
+    {
+        audioSrc.clip = sounds[index];
+        audioSrc.Play();
     }
 }

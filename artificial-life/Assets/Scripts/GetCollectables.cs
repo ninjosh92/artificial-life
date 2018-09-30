@@ -6,8 +6,11 @@ public class GetCollectables : MonoBehaviour {
 
     public int totalToken = 0;
 
-	// Use this for initialization
-	void Start () {
+    public AudioClip[] sounds;
+    public AudioSource audioSrc;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -28,8 +31,14 @@ public class GetCollectables : MonoBehaviour {
         if (collision.gameObject.CompareTag("Guard"))
         {
             Destroy(collision.gameObject);
-            
+            playsound(0);
         }
 
+    }
+
+    private void playsound(int index)
+    {
+        audioSrc.clip = sounds[index];
+        audioSrc.Play();
     }
 }

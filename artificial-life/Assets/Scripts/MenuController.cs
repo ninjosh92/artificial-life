@@ -18,7 +18,7 @@ public class MenuController : MonoBehaviour {
 
     public void PlayClicked()
     {
-        SceneManager.LoadScene("Josh scene");
+        SceneManager.LoadScene("LevelOne");
     }
 
     public void QuitClicked()
