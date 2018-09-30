@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetCollectables : MonoBehaviour {
-
-    public int totalToken = 0;
+public class FlashlightBox : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -19,17 +17,12 @@ public class GetCollectables : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     { //
 
-        if (collision.gameObject.CompareTag("Collectable"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
-            totalToken++;
+           
         }
 
-        if (collision.gameObject.CompareTag("Guard"))
-        {
-            Destroy(collision.gameObject);
-            
-        }
 
     }
 }
